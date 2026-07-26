@@ -1,0 +1,15 @@
+name: Push to production
+on:
+  pull_request_target:
+    branches:
+      - prod
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install curl
+        run: sudo apt instal curl
+      - name: Trigger deploy URL
+        run: |
+          curl -fsS -H "X-Deploy-Token: ${{ secrets.TOKEN }}" "${{ secrets.DEPLOY_URL }}"
