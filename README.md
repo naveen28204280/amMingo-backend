@@ -24,13 +24,13 @@ fastapi dev app/main.py
 
 ## Deploy with docker 
 
-### First clone the repo to your local
+### 1. Clone the repo to your local
 ```bash
 git clone https://github.com/amfoss/ammingo-backend
 cd ammingo-backend
 ```
 
-### Run the container
+### 2. Run the container
 ```bash
 docker compose up -d
 ```

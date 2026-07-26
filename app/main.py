@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import auth
@@ -6,7 +7,6 @@ from app.routes import profile
 from app.db.db import engine, Base
 from starlette.middleware.sessions import SessionMiddleware
 from app.middlewares.verify_token import verify_token
-import os
 from contextlib import asynccontextmanager
 
 
@@ -39,4 +39,4 @@ app.include_router(profile.router, prefix="/api", tags=["profile"])
 
 @app.get("/")
 def root():
-    return {"amMingo": "This is amMingo"}
+    return {"amMingo": "amMingo API is running!"}
